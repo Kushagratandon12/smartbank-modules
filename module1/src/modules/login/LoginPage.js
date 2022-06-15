@@ -1,8 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
+import './LoginPage.css'
 import { useHistory } from 'react-router-dom';
 import { API_URL } from '../../Constants';
 import { LoginContext } from '../../contexts/LoginContext';
+import login from '../../images/login.svg';
 
 function LoginPage(props) {
     let history = useHistory();
@@ -69,44 +71,33 @@ function LoginPage(props) {
             })
 
     }
-
-
     
     return (
-        <div className="login-page container">
-
-            <h3>Welcome to SmartBank Credit card</h3>
-            <hr></hr>
+        <div className="login-page">
+            <div className='login-img'>
+                <img src={login} width="400em" height="500em"></img>
+            </div> 
 
             <div className="login-form">
-                <div className="row">
-                    <div className="col-md-6">
-                        <form onSubmit={verifyLogin}>
-
-                            <div className="form-group">
-                                <label>
-                                    <h5>
-                                        <i className="fas fa-user"></i>&nbsp;User id
-                                    </h5>
-                                </label>
-                                <input type="text" value={userId} required className="form-control" onChange={changeUserId} />
-                            </div>
-
-                            <div className="form-group">
-                                <label><h5><i className="fas fa-lock"></i>&nbsp;Password</h5></label>
-                                <input type="password" value={password} required className="form-control" onChange={changePassword} />
-                            </div>
-
-                            <div>
-                                <button type="submit" className="btn btn-primary">
-                                    Sign In
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+            <div className="login-head">Welcome to SmartBank Credit card </div>
+            <div class="login-msg">
+                <span>Login In to SmartBank Credit Card Portal.</span>
             </div>
+            <form onSubmit={verifyLogin} class="g-login">
+                <div>
+                    <input type="text" value={userId} class="gr-text" required  onChange={changeUserId} placeholder="Enter UserID" size="34"/>
+                </div>
 
+                <div>
+                    <input type="password" value={password} class="gr-text" required onChange={changePassword} placeholder="Enter Password" size="34"/>
+                </div>
+
+                <div>
+                    <button type="submit" className="btn btn-primary">Sign In</button>
+                </div>
+
+            </form>
+            </div>
         </div>
     );
 }
