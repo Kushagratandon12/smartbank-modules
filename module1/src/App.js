@@ -20,7 +20,7 @@ function App() {
         </LoginContextProvider>
 
 
-      </div>
+      </div>  
 
     </BrowserRouter>
   );
