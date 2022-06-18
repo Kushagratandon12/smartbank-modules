@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import './CatalogueItem.css';
 import amazon from '../../images/amazon.png';
 import uber from '../../images/uber.png';
 import walmart from '../../images/walmart.png';
 import starbucks from '../../images/starbucks.png';
 
+import { LoginContext } from '../../contexts/LoginContext';
+import { CartContext } from '../../contexts/CartContext';
+
 const CatalogueItem = ({ catalogue }) => {
 
     // destructuring the props.
+    const {
+        item,
+        redeemptionPoint,
+        redeemptionAmount
+    } = catalogue
 
+    const { isLoggedIn } = useContext(LoginContext);
+    const { addToCart } = useContext(CartContext);
 
     /**
      * return the image of item
