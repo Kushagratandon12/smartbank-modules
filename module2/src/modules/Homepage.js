@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { LoginContext } from '../contexts/LoginContext';
 
 function Homepage() {
 
+
+    const loginDetails = useContext(LoginContext)
+
+    console.log(loginDetails)
+
     const loggedInUser = {
-        ccNumber: 0,
-        ccName: "Dummy Card",
-        userName: "Guest User",
-        userId: "guest",
-        availableRedeemPoints: 0,
-        totalRewardsGained: 0
+        ccNumber: loginDetails.loggedInUser.ccNumber,
+        ccName: loginDetails.loggedInUser.ccName,
+        userName: loginDetails.loggedInUser.userName,
+        userId: loginDetails.loggedInUser.userId,
+        availableRedeemPoints: loginDetails.loggedInUser.availableRedeemPoints,
+        totalRewardsGained: loginDetails.loggedInUser.totalRewardsGained
     }
 
+    console.log(loginDetails.loggedInUser.ccNumber)
 
     return (
         <div className="homepage container">
@@ -30,11 +37,11 @@ function Homepage() {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>ccNumber</td>
-                                <td>ccName</td>
-                                <td>userName</td>
-                                <td>availableRedeemPoints</td>
-                                <td>totalRewardsGained</td>
+                                <td>{loggedInUser.ccNumber}</td>
+                                <td>{loggedInUser.ccName}</td>
+                                <td>{loggedInUser.userName}</td>
+                                <td>{loggedInUser.availableRedeemPoints}</td>
+                                <td>{loggedInUser.totalRewardsGained}</td>
                             </tr>
                         </tbody>
                     </table>
