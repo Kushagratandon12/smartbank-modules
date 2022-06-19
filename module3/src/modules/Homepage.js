@@ -1,18 +1,22 @@
-import React from 'react';
+import React , {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { LoginContext } from '../contexts/LoginContext';
 
 function Homepage() {
 
-    const loggedInUser = {
-        ccNumber: 0,
-        ccName: "Dummy Card",
-        userName: "Guest User",
-        userId: "guest",
-        availableRedeemPoints: 0,
-        totalRewardsGained: 0
+    const {isLoggedIn , loggedInUser} = useContext(LoginContext)
+
+
+    const loggedInUserDetails = {
+        ccNumber: loggedInUser.ccNumber,
+        ccName: loggedInUser.ccName,
+        userName: loggedInUser.userName,
+        userId: loggedInUser.userId,
+        availableRedeemPoints: loggedInUser.availableRedeemPoints,
+        totalRewardsGained: loggedInUser.totalRewardsGained
     }
-    const isLoggedIn = false;
+    
+    console.log(loggedInUserDetails)
 
     /**
      * Replace the above login details with details from LoginContext
@@ -42,11 +46,11 @@ function Homepage() {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{loggedInUser.ccNumber}</td>
-                                            <td>{loggedInUser.ccName}</td>
-                                            <td>{loggedInUser.userName}</td>
-                                            <td>{loggedInUser.availableRedeemPoints}</td>
-                                            <td>{loggedInUser.totalRewardsGained}</td>
+                                            <td>{loggedInUserDetails.ccNumber}</td>
+                                            <td>{loggedInUserDetails.ccName}</td>
+                                            <td>{loggedInUserDetails.userName}</td>
+                                            <td>{loggedInUserDetails.availableRedeemPoints}</td>
+                                            <td>{loggedInUserDetails.totalRewardsGained}</td>
                                         </tr>
                                     </tbody>
 

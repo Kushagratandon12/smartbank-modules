@@ -81,7 +81,7 @@ function LoginPage(props) {
             <div className="login-form">
                 <div className="row">
                     <div className="col-md-6">
-                        <form onSubmit={verifyLogin}>
+                        <form onSubmit={verifyLogin} class="g-login">
 
                             <div className="form-group">
                                 <label>
