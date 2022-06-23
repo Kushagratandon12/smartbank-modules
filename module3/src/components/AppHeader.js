@@ -17,7 +17,7 @@ function AppHeader() {
 
     return (
         <div className="app-header">
-            <nav className="navbar navbar-expand-lg navbar-dark bg-header fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <Link className="navbar-brand" to="/">SmartBank Credit Card</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

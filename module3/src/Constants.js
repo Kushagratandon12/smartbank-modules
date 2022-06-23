@@ -1,2 +1,3 @@
 
-export const API_URL = "http://localhost:8080/";
+import Config from "./Config";
+export const API_URL = Config.apiurl; 
